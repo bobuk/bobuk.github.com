@@ -6,284 +6,280 @@
   <link rel="stylesheet" href="pycco.css">
 </head>
 <body>
-<div id="background"></div>
 <div id='container'>
+  <div id="background"></div>
   
-  <div class='section'>
-    <div class='docs'><h1>onetrigg.py</h1></div>
-  </div>
-  <div class='clearall'>
-  <div class='section' id='section-0'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-0'>#</a>
-      </div>
-      <p><a href="http://bobuk.github.com/onetrigg.py">"<strong>Onetrigg</strong>"</a> это мой способ обеспечить удобство тестового деплоймента.
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>onetrigg.py</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-0'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-0">#</a>
+        </div>
+        <p><a href="http://bobuk.github.com/onetrigg.py">"<strong>Onetrigg</strong>"</a> это мой способ обеспечить удобство тестового деплоймента.
 Ну... в моем понимании этого слова. Довольно часто я использую маленькие скрипты,
 которые слегка по разному должны вести себя в тестовом и боевом окружении.
 Например в тестовом деплойменте веб-сервиса обязательно должны показываться тестовые
 сообщения, а в боевом - конечно же нет. Большинство людей использует для этого конфиг.
 Но мы не ищем легких путей, поэтому я поступаю иначе.</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div><div class='section' id='section-1'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-1'>#</a>
-      </div>
-      <p>Вот так выглядит типовой образец моего скрипта, где-нибудь посреди кода.
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-1'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-1">#</a>
+        </div>
+        <p>Вот так выглядит типовой образец моего скрипта, где-нибудь посреди кода.
 В умолчальном состоянии этот код работает "как есть", т.е. в данном случае
 запрещает дебаггинг и скрывает системные файлы, как это следует из названий переменных.</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre><span class="k">def</span> <span class="nf">testFunc1</span><span class="p">():</span>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="k">def</span> <span class="nf">testFunc1</span><span class="p">():</span>
     <span class="n">use_debugger</span> <span class="o">=</span> <span class="bp">False</span><span class="c">#True</span>
-    <span class="n">hide_system_files</span> <span class="o">=</span> <span class="bp">True</span><span class="c">#False</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div><div class='section' id='section-2'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-2'>#</a>
-      </div>
-      <p>Однако для отладки я делаю так
+    <span class="n">hide_system_files</span> <span class="o">=</span> <span class="bp">True</span><span class="c">#False</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-2'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-2">#</a>
+        </div>
+        <p>Однако для отладки я делаю так
       onetrigg inplace work.py
 и вижу совсем другие результаты в коде</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre><span class="k">def</span> <span class="nf">testFunc1</span><span class="p">():</span>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="k">def</span> <span class="nf">testFunc1</span><span class="p">():</span>
     <span class="n">use_debugger</span> <span class="o">=</span> <span class="bp">True</span><span class="c">#False</span>
-    <span class="n">hide_system_files</span> <span class="o">=</span> <span class="bp">False</span><span class="c">#True</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div><div class='section' id='section-3'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-3'>#</a>
-      </div>
-      <p>В общем да, идея крайне простая, менять в коде Слово1#Слово2 и не заморачиваться за конфиги
+    <span class="n">hide_system_files</span> <span class="o">=</span> <span class="bp">False</span><span class="c">#True</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-3'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-3">#</a>
+        </div>
+        <p>В общем да, идея крайне простая, менять в коде Слово1#Слово2 и не заморачиваться за конфиги
 Для деплоймента это ужасно удобно. Попробуйте. Привыкните - потом за уши не оттащить будет :)
-Код утилиты грязный, но вполне читаемый. Итак приступим.</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre><span class="kn">import</span> <span class="nn">sys</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div><div class='section' id='section-4'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-4'>#</a>
-      </div>
-      <p>Для парсинга файлов я по привычке использую regular expression</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre><span class="kn">import</span> <span class="nn">re</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div><div class='section' id='section-5'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-5'>#</a>
-      </div>
-      <p>Типовой регекс для нахождения подобных выражений в питоне выглядит читабельным.
+Код утилиты грязный, но вполне читаемый.</p>
+<hr />
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-4'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-4">#</a>
+        </div>
+        <p>Итак приступим.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="kn">import</span> <span class="nn">sys</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-5'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-5">#</a>
+        </div>
+        <p>Для парсинга файлов я по привычке использую regular expression</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="kn">import</span> <span class="nn">re</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-6'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-6">#</a>
+        </div>
+        <p>Типовой регекс для нахождения подобных выражений в питоне выглядит читабельным.
 Любое ненулевое число букв, символ решетки и сразу за ним еще ненулевое число букв.
 Обратите внимание, нормальные люди всегда используют пробел перед символом комментария.
 Таким образом перепутать интересный нам токен с простым коментарием практически невозможно.</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre><span class="n">SE_TOKEN</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">&quot;\w+#\w+&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">L</span> <span class="o">|</span> <span class="n">re</span><span class="o">.</span><span class="n">UNICODE</span><span class="p">)</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div><div class='section' id='section-6'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-6'>#</a>
-      </div>
-      <p>Функция инвертирует токен вида Слово1#Солво2 вокруг символа решетки</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre><span class="k">def</span> <span class="nf">rotate_token</span><span class="p">(</span><span class="n">token</span><span class="p">):</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div><div class='section' id='section-7'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-7'>#</a>
-      </div>
-      <p>Если в к токене отсутствует, то выбрасывается исключение SyntaxError.
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="n">SE_TOKEN</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">&quot;\w+#\w+&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">L</span> <span class="o">|</span> <span class="n">re</span><span class="o">.</span><span class="n">UNICODE</span><span class="p">)</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-7'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-7">#</a>
+        </div>
+        <p>Функция инвертирует токен вида Слово1#Солво2 вокруг символа решетки</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="k">def</span> <span class="nf">rotate_token</span><span class="p">(</span><span class="n">token</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-8'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-8">#</a>
+        </div>
+        <p>Если в к токене отсутствует, то выбрасывается исключение SyntaxError.
 Однако я не знаю каким образом это может произойти вообще.</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre>    <span class="k">if</span> <span class="s">&#39;#&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">token</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">SyntaxError</span><span class="p">(</span><span class="s">&#39;No hash symbol in token. But how?&#39;</span><span class="p">)</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div><div class='section' id='section-8'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-8'>#</a>
-      </div>
-      <p>Я выбрал самый простой способ для любого, кто писал на лиспе.
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">if</span> <span class="s">&#39;#&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">token</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">SyntaxError</span><span class="p">(</span><span class="s">&#39;No hash symbol in token. But how?&#39;</span><span class="p">)</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-9'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-9">#</a>
+        </div>
+        <p>Я выбрал самый простой способ для любого, кто писал на лиспе.
 Он же - самый быстрый. У вас есть более интерсные методы?</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre>    <span class="k">return</span> <span class="s">&#39;#&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">return</span> <span class="s">&#39;#&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
                 <span class="nb">reversed</span><span class="p">(</span>
                     <span class="n">token</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;#&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
                 <span class="p">)</span>
-            <span class="p">)</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div><div class='section' id='section-9'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-9'>#</a>
-      </div>
-      <p>В этой функции мы найдем все строки, похожие на токены и попытаемся заменить их на обратный.
+            <span class="p">)</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-10'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-10">#</a>
+        </div>
+        <p>В этой функции мы найдем все строки, похожие на токены и попытаемся заменить их на обратный.
 Конечно функция будет генератором.</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre><span class="k">def</span> <span class="nf">replace_tokens</span><span class="p">(</span><span class="n">source</span><span class="p">):</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div><div class='section' id='section-10'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-10'>#</a>
-      </div>
-      <p>В питоне2 строка  немутабельный тип. Т.е. по сути, в него нельзя ничего записать, он константен.
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="k">def</span> <span class="nf">replace_tokens</span><span class="p">(</span><span class="n">source</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-11'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-11">#</a>
+        </div>
+        <p>В питоне2 строка  немутабельный тип. Т.е. по сути, в него нельзя ничего записать, он константен.
 Поэтому первое, что надо сделать - создать копию строки в виде списка/массива.</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre>    <span class="n">worce</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="n">worce</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">sub</span> <span class="ow">in</span> <span class="n">SE_TOKEN</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
         <span class="p">(</span><span class="n">h_from</span><span class="p">,</span> <span class="n">h_to</span><span class="p">)</span> <span class="o">=</span> <span class="n">sub</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
-        <span class="n">worce</span><span class="p">[</span><span class="n">h_from</span><span class="p">:</span><span class="n">h_to</span><span class="p">]</span> <span class="o">=</span> <span class="n">rotate_token</span><span class="p">(</span><span class="n">source</span><span class="p">[</span><span class="n">h_from</span><span class="p">:</span><span class="n">h_to</span><span class="p">])</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div><div class='section' id='section-11'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-11'>#</a>
-      </div>
-      <p>Самый быстрый способ вернуть массив обратно к строке действительно такой. Я проверял.</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre>    <span class="k">return</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">worce</span><span class="p">)</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div><div class='section' id='section-12'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-12'>#</a>
-      </div>
-      <p>Обратите внимание, функция возвращает -1</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre><span class="k">def</span> <span class="nf">help</span><span class="p">():</span>
+        <span class="n">worce</span><span class="p">[</span><span class="n">h_from</span><span class="p">:</span><span class="n">h_to</span><span class="p">]</span> <span class="o">=</span> <span class="n">rotate_token</span><span class="p">(</span><span class="n">source</span><span class="p">[</span><span class="n">h_from</span><span class="p">:</span><span class="n">h_to</span><span class="p">])</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-12'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-12">#</a>
+        </div>
+        <p>Самый быстрый способ вернуть массив обратно к строке действительно такой. Я проверял.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">return</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">worce</span><span class="p">)</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-13'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-13">#</a>
+        </div>
+        <p>Обратите внимание, функция возвращает -1</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="k">def</span> <span class="nf">help</span><span class="p">():</span>
     <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;onetrigg [inplace] file1 file2 file3...</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div><div class='section' id='section-13'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-13'>#</a>
-      </div>
-      <p>Это основной цикл программы. Так как я очень ленивый - для парсинга аргументов не исользуется optparse,
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-14'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-14">#</a>
+        </div>
+        <p>Это основной цикл программы. Так как я очень ленивый - для парсинга аргументов не исользуется optparse,
 потому что мой собственный способ задавать опции мне нравится больше.</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
-    <span class="n">options</span> <span class="o">=</span> <span class="p">[]</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div><div class='section' id='section-14'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-14'>#</a>
-      </div>
-      <p>Если аргументы не заданы - показываем хелп и завершаем работу</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre>    <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">help</span><span class="p">()</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div><div class='section' id='section-15'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-15'>#</a>
-      </div>
-      <p>Если первым аргументом стоит слово inplace, то исправления будут внесены прямо в файл.</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre>    <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;inplace&#39;</span><span class="p">:</span>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="p">[]</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-15'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-15">#</a>
+        </div>
+        <p>Если аргументы не заданы - показываем хелп и завершаем работу</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">help</span><span class="p">()</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-16'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-16">#</a>
+        </div>
+        <p>Если первым аргументом стоит слово inplace, то исправления будут внесены прямо в файл.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;inplace&#39;</span><span class="p">:</span>
         <span class="n">options</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-        <span class="n">args</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div><div class='section' id='section-16'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-16'>#</a>
-      </div>
-      <p>Просмотрим все аргументы...</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre>    <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-17'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-17">#</a>
+        </div>
+        <p>Просмотрим все аргументы...</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;processing </span><span class="si">%s</span><span class="s">...&#39;</span> <span class="o">%</span> <span class="n">arg</span><span class="p">)</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fread</span><span class="p">:</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="n">replace_tokens</span><span class="p">(</span><span class="n">fread</span><span class="o">.</span><span class="n">read</span><span class="p">())</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div><div class='section' id='section-17'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-17'>#</a>
-      </div>
-      <p>Если в списке опций присутствует аргумент inplace - заменим содержимое файла исправленным вариантом.</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre>        <span class="k">if</span> <span class="s">&#39;inplace&#39;</span> <span class="ow">in</span> <span class="n">options</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">replace_tokens</span><span class="p">(</span><span class="n">fread</span><span class="o">.</span><span class="n">read</span><span class="p">())</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-18'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-18">#</a>
+        </div>
+        <p>Если в списке опций присутствует аргумент inplace - заменим содержимое файла исправленным вариантом.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>        <span class="k">if</span> <span class="s">&#39;inplace&#39;</span> <span class="ow">in</span> <span class="n">options</span><span class="p">:</span>
             <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;inplace &#39;</span><span class="p">)</span>
             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fwrite</span><span class="p">:</span>
                 <span class="n">fwrite</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39; done</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div><div class='section' id='section-18'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-18'>#</a>
-      </div>
-      <p>Чтобы обеспечить нулевой код возвращения из программы, функция возвращает 0</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre>    <span class="k">return</span> <span class="mi">0</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39; done</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-19'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-19">#</a>
+        </div>
+        <p>Чтобы обеспечить нулевой код возвращения из программы, функция возвращает 0</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">return</span> <span class="mi">0</span>
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span>
         <span class="n">main</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
-    <span class="p">)</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div><div class='section' id='section-19'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-19'>#</a>
-      </div>
-      <p>Вот и всё, ребята. Увидимся.</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div>
+    <span class="p">)</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-20'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-20">#</a>
+        </div>
+        <p>Вот и всё, ребята. Увидимся.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre></pre></div></pre></div>
+      </td>
+    </tr>
+  </table>
 </div>
 </body>
